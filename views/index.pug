@@ -1,13 +1,20 @@
 extends layout
 
 block content
-  h1= title
-  h2 Menú de opciones
-
-  a(href='/mapa') Ver Mapa
-  br 
-  br 
-  a(href='/buscar') Buscar por DNI 
-  br
-  br
-  a(href='/mapa_estatico') Ver Cursada en tiempo real
+    .header
+    input(type="checkbox", class="openSidebarMenu", id="openSidebarMenu")
+    label(for="openSidebarMenu", class="sidebarIconToggle")
+      div.spinner.diagonal.part-1
+      div.spinner.horizontal
+      div.spinner.diagonal.part-2
+    #sidebarMenu
+      ul.sidebarMenuInner
+        li
+          a(href="/mapa") Ver mapa
+        li
+          a(href="/buscar") Buscar por DNI
+        li
+          a(href="/mapa_estatico") Mapa en tiempo real
+    #center.main.center
+      .mainInner
+        div MAPA UNPAZ
